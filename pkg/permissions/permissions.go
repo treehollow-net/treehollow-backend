@@ -1,8 +1,8 @@
 package permissions
 
 import (
-	"thuhole-go-backend/pkg/structs"
-	"thuhole-go-backend/pkg/utils"
+	"treehollow-backend/pkg/structs"
+	"treehollow-backend/pkg/utils"
 )
 
 func GetPermissionsByPost(user *structs.User, post *structs.Post) []string {

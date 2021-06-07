@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
-	"thuhole-go-backend/pkg/consts"
+	"treehollow-backend/pkg/consts"
 )
 
 func ServicesApiListenHttp() {

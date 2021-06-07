@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"thuhole-go-backend/pkg/db"
-	"thuhole-go-backend/pkg/permissions"
-	"thuhole-go-backend/pkg/structs"
-	"thuhole-go-backend/pkg/utils"
 	"time"
+	"treehollow-backend/pkg/db"
+	"treehollow-backend/pkg/permissions"
+	"treehollow-backend/pkg/structs"
+	"treehollow-backend/pkg/utils"
 )
 
 func adminHelpCommand() gin.HandlerFunc {

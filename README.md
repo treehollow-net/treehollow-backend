@@ -1,16 +1,16 @@
-# thuhole-go-backend
+# treehollow-backend
 
-[![Build Status](https://travis-ci.com/thuhole/thuhole-go-backend.svg?branch=master)](https://travis-ci.com/thuhole/thuhole-go-backend)
+[![Build Status](https://travis-ci.com/thuhole/treehollow-backend.svg?branch=master)](https://travis-ci.com/thuhole/treehollow-backend)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![codebeat badge](https://codebeat.co/badges/d465de5a-345f-4fe8-9f23-ad089691d78d)](https://codebeat.co/projects/github-com-thuhole-thuhole-go-backend-master)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthuhole%2Fthuhole-go-backend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthuhole%2Fthuhole-go-backend?ref=badge_shield)
+[![codebeat badge](https://codebeat.co/badges/d465de5a-345f-4fe8-9f23-ad089691d78d)](https://codebeat.co/projects/github-com-thuhole-treehollow-backend-master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthuhole%2Ftreehollow-backend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthuhole%2Ftreehollow-backend?ref=badge_shield)
 
 [T大树洞](https://thuhole.com/) 的Golang后端。
 
 ## 安装方式
 ```bash
-git clone https://github.com/thuhole/thuhole-go-backend
-cd thuhole-go-backend
+git clone https://github.com/thuhole/treehollow-backend
+cd treehollow-backend
 
 # (optional)upgrade all dependencies
 go get -u ./...
@@ -121,4 +121,4 @@ server {
 [AGPL v3](./LICENSE)
 
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthuhole%2Fthuhole-go-backend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthuhole%2Fthuhole-go-backend?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fthuhole%2Ftreehollow-backend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fthuhole%2Ftreehollow-backend?ref=badge_large)

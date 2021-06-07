@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 	"testing"
-	"thuhole-go-backend/pkg/config"
+	"treehollow-backend/pkg/config"
 )
 
 func TestS3(t *testing.T) {

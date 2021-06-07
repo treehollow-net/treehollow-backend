@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"net/http"
-	"thuhole-go-backend/pkg/config"
+	"treehollow-backend/pkg/config"
 )
 
 func apiFallBack(c *gin.Context) {

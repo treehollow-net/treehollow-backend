@@ -3,8 +3,8 @@ package db
 import (
 	"github.com/patrickmn/go-cache"
 	"strconv"
-	"thuhole-go-backend/pkg/structs"
 	"time"
+	"treehollow-backend/pkg/structs"
 )
 
 var commentCache *cache.Cache

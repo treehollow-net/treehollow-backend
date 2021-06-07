@@ -3,8 +3,8 @@ package structs
 import (
 	"fmt"
 	"gorm.io/gorm"
-	"thuhole-go-backend/pkg/utils"
 	"time"
+	"treehollow-backend/pkg/utils"
 )
 
 type UserRole int32

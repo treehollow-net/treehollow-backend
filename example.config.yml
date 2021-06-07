@@ -124,3 +124,10 @@ fallback_announcement: 系统正在维护升级，请稍后重试...
 
 ### 服务宕机时的错误提示程序监听端口
 fallback_listen_address: 127.0.0.1:8082
+
+### aliyun 短信配置参数
+aliyun_regin_id: ap-northeast-1
+aliyun_access_key_id: "<accessKeyId>"
+aliyun_access_key_secret: "<accessSecret>"
+aliyun_sign_name: "Apple Inc."
+aliyun_temp_code: "SMS_209335004"

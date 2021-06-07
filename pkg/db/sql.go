@@ -10,11 +10,11 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"thuhole-go-backend/pkg/consts"
-	"thuhole-go-backend/pkg/permissions"
-	"thuhole-go-backend/pkg/structs"
-	"thuhole-go-backend/pkg/utils"
 	"time"
+	"treehollow-backend/pkg/consts"
+	"treehollow-backend/pkg/permissions"
+	"treehollow-backend/pkg/structs"
+	"treehollow-backend/pkg/utils"
 )
 
 var db *gorm.DB

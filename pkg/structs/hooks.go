@@ -4,7 +4,7 @@ import (
 	"gorm.io/gorm"
 	"math"
 	"strconv"
-	"thuhole-go-backend/pkg/utils"
+	"treehollow-backend/pkg/utils"
 )
 
 //Set the first registered user to be superuser

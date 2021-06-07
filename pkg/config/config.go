@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/viper"
 	"log"
 	"net"
-	"thuhole-go-backend/pkg/utils"
+	"treehollow-backend/pkg/utils"
 )
 
 func refreshAllowedSubnets() {

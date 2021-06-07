@@ -1,8 +1,9 @@
-module thuhole-go-backend
+module treehollow-backend
 
 go 1.15
 
 require (
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1126
 	github.com/aws/aws-sdk-go v1.36.31
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gin-contrib/cors v1.3.1
@@ -19,7 +20,7 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/robfig/cron/v3 v3.0.1
-	github.com/shirou/gopsutil/v3 v3.21.1 // indirect
+	github.com/shirou/gopsutil/v3 v3.21.1
 	github.com/sigurn/crc8 v0.0.0-20160107002456-e55481d6f45c
 	github.com/sigurn/utils v0.0.0-20190728110027-e1fefb11a144 // indirect
 	github.com/spf13/afero v1.5.1 // indirect

@@ -12,11 +12,11 @@ import (
 	"net"
 	"net/http"
 	"regexp"
-	"thuhole-go-backend/pkg/db"
-	"thuhole-go-backend/pkg/mail"
-	"thuhole-go-backend/pkg/structs"
-	"thuhole-go-backend/pkg/utils"
 	"time"
+	"treehollow-backend/pkg/db"
+	"treehollow-backend/pkg/mail"
+	"treehollow-backend/pkg/structs"
+	"treehollow-backend/pkg/utils"
 )
 
 func sendCode(c *gin.Context) {
@@ -121,7 +121,7 @@ func sendCode(c *gin.Context) {
 		return
 	}
 
-	err = mail.SendMail(code, user)
+	err = mail.SendMessageCode(code, user)
 	if err != nil {
 		log.Printf("send mail to %s failed: %s\n", user, err)
 		c.JSON(http.StatusOK, gin.H{

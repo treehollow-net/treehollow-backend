@@ -1,31 +1,23 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
 	"log"
-	"thuhole-go-backend/pkg/config"
-	"thuhole-go-backend/pkg/consts"
-	"thuhole-go-backend/pkg/db"
-	"thuhole-go-backend/pkg/logger"
-	"thuhole-go-backend/pkg/route"
-	"thuhole-go-backend/pkg/structs"
-	"thuhole-go-backend/pkg/utils"
 	"time"
+	"treehollow-backend/pkg/config"
+	"treehollow-backend/pkg/consts"
+	"treehollow-backend/pkg/db"
+	"treehollow-backend/pkg/logger"
+	"treehollow-backend/pkg/route"
+	"treehollow-backend/pkg/structs"
+	"treehollow-backend/pkg/utils"
 )
 
 func main() {
-	logger.InitLog(consts.LoginApiLogFile)
+	logger.InitLog(consts.ServicesApiLogFile)
 	config.InitConfigFile()
-
-	if false == viper.GetBool("is_debug") {
-		fmt.Print("Read salt from stdin: ")
-		_, _ = fmt.Scanln(&utils.Salt)
-		if utils.Hash1(utils.Salt) != viper.GetString("salt_hashed") {
-			panic("salt verification failed!")
-		}
-	}
 
 	db.InitDb()
 	err := db.GetDb(false).
@@ -38,5 +30,13 @@ func main() {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	route.LoginApiListenHttp()
+	route.HotPosts, _ = db.GetHotPosts()
+	c := cron.New()
+	_, _ = c.AddFunc("*/1 * * * *", func() {
+		route.HotPosts, _ = db.GetHotPosts()
+		//log.Println("refreshed hotPosts ,err=", err)
+	})
+	c.Start()
+
+	route.ServicesApiListenHttp()
 }
