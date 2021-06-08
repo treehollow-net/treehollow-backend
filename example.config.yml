@@ -19,10 +19,11 @@ images_path: /path/to/images/folder
 ### 是否是debug模式
 is_debug: true
 
-### 当is_debug=false时，用户邮箱在数据库中会通过一个盐被单向加密。
-### 为了安全，这个盐的明文不会存储到硬盘上，而是每次启动树洞登录服务程序时需要手动输入，这里需要填写盐的sha256哈希以避免输错。
+### 当is_debug=false时，用户邮箱在数据库中会通过一个盐被加密。
+### 这里换为使用 AES CBC+PKCS7 进行可逆加密
 ### 获取sha256的方法：https://thuhole.github.io/online-tools/sha256.html
-salt_hashed: d83f8dd178b6db458f6a2b5782a5758dd4250550e7f73bcd4ac963bebf967939
+salt: d83f8dd178b6db458f6a2b5782a5758dd4250550e7f73bcd4ac963bebf967939
+salt_hashed: aa827821551254ef7cc864bbcd143c6025f419ff6a637a777f8ab242416fbb5f
 
 ### 树洞内容服务的监听端口和登录服务的监听端口。这两个端口和程序分开的。
 login_api_listen_address: 127.0.0.1:8080
@@ -41,11 +42,11 @@ redis_source: redis://localhost:6379/0
 sql_source: USER:PASSWORD@tcp(localhost:3306)/DB_NAME
 
 ### SMTP配置
-smtp_host: smtp.thuhole.com
-smtp_password: YOUR_PASSWORD
-smtp_username: noreply@thuhole.com
-smtp_port: 465
-
+#smtp_host: smtp.thuhole.com
+#smtp_password: YOUR_PASSWORD
+#smtp_username: noreply@thuhole.com
+#smtp_port: 465
+#
 
 
 
@@ -129,5 +130,5 @@ fallback_listen_address: 127.0.0.1:8082
 aliyun_regin_id: ap-northeast-1
 aliyun_access_key_id: "<accessKeyId>"
 aliyun_access_key_secret: "<accessSecret>"
-aliyun_sign_name: "Apple Inc."
+aliyun_sign_name: "Bpple Inc."
 aliyun_temp_code: "SMS_209335004"

@@ -20,8 +20,8 @@ func main() {
 	config.InitConfigFile()
 
 	if false == viper.GetBool("is_debug") {
-		fmt.Print("Read salt from stdin: ")
-		_, _ = fmt.Scanln(&utils.Salt)
+		fmt.Print("Read salt from config: ")
+		utils.Salt = viper.GetString("salt")
 		if utils.Hash1(utils.Salt) != viper.GetString("salt_hashed") {
 			panic("salt verification failed!")
 		}

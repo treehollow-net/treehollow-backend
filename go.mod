@@ -30,6 +30,7 @@ require (
 	github.com/spf13/viper v1.7.1
 	github.com/ugorji/go v1.2.3 // indirect
 	github.com/ulule/limiter/v3 v3.8.0
+	github.com/wumansgy/goEncrypt v0.0.0-20201114063050-efa0a0601707
 	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad // indirect
 	golang.org/x/sys v0.0.0-20210122235752-a8b976e07c7b // indirect
 	golang.org/x/text v0.3.5 // indirect

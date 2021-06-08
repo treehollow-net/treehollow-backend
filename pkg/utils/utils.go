@@ -12,6 +12,7 @@ import (
 	"github.com/oschwald/geoip2-golang"
 	"github.com/sigurn/crc8"
 	"github.com/spf13/viper"
+	"github.com/wumansgy/goEncrypt"
 	"io/ioutil"
 	"log"
 	"math/big"
@@ -55,7 +56,13 @@ func Hash1(user string) string {
 }
 
 func HashEmail(user string) string {
-	return Hash1(Salt + Hash1(strings.ToLower(user)))
+	//return Hash1(Salt + Hash1(strings.ToLower(user)))
+	// change to AES CBC
+	cryptText, err := goEncrypt.AesCbcEncrypt([]byte(user), []byte(Salt))
+	if err != nil {
+		panic(err)
+	}
+	return hex.EncodeToString(cryptText)
 }
 
 func GetTimeStamp() int64 {
