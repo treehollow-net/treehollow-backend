@@ -10,7 +10,7 @@ func TestSendMessageCode(t *testing.T) {
 	//accessKeySecret := ""
 	//signName := ""
 	//tempCode := ""
-	err := SendMessageCode("123455", "15398027057")
+	err := SendMessageCode("123455", "16278930002")
 	if err != nil {
 		panic(err)
 	}
