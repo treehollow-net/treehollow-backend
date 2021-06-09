@@ -58,6 +58,9 @@ func Hash1(user string) string {
 func HashEmail(user string) string {
 	//return Hash1(Salt + Hash1(strings.ToLower(user)))
 	// change to AES CBC
+	if true == viper.GetBool("is_debug") {
+		return user
+	}
 	cryptText, err := goEncrypt.AesCbcEncrypt([]byte(user), []byte(Salt))
 	if err != nil {
 		panic(err)

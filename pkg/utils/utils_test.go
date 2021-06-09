@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -22,4 +23,10 @@ func TestCheckMail(t *testing.T) {
 			t.Errorf("%s is expected to be %v", c.mail, c.valid)
 		}
 	}
+}
+
+func TestHashEmail(t *testing.T) {
+	Salt = "asdfghjklpoiuyt"
+	enc := HashEmail("16637378928")
+	fmt.Println(enc)
 }

@@ -2,6 +2,7 @@ package mail
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/dysmsapi"
 	"github.com/spf13/viper"
 )
@@ -35,11 +36,11 @@ func SendMessageCode(code string, recipient string) error {
 	}
 	request.TemplateParam = string(b)
 
-	_, err = client.SendSms(request)
+	response, err := client.SendSms(request)
 	if err != nil {
-		//fmt.Print(err.Error())
+		fmt.Print(err.Error())
 		return err
 	}
-	//fmt.Printf("response is %#v\n", response)
+	fmt.Printf("response is %#v\n", response)
 	return nil
 }
