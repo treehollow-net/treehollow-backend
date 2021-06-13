@@ -43,7 +43,7 @@ func sendCode(c *gin.Context) {
 	if !emailCheck.MatchString(user) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"msg":     "很抱歉，您的邮箱无法注册" + viper.GetString("name"),
+			"msg":     "很抱歉，您的账户无法注册" + viper.GetString("name"),
 		})
 		return
 	}
@@ -64,7 +64,7 @@ func sendCode(c *gin.Context) {
 	if now-timeStamp < 300 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"msg":     "请不要短时间内重复发送邮件。",
+			"msg":     "请不要短时间内重复发送验证码。",
 		})
 		return
 	}
@@ -126,7 +126,7 @@ func sendCode(c *gin.Context) {
 		log.Printf("send mail to %s failed: %s\n", user, err)
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"msg":     "验证码邮件发送失败。",
+			"msg":     "验证码发送失败。",
 		})
 		return
 	}
@@ -145,7 +145,7 @@ func sendCode(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{
 		"success": true,
-		"msg":     "验证码发送成功。如果要在多客户端登录请不要使用邮件登录而是Token登录。5分钟内无法重复发送验证码，请记得查看垃圾邮件。",
+		"msg":     "验证码发送成功。5分钟内无法重复发送验证码。",
 	})
 }
 
@@ -174,7 +174,7 @@ func login(c *gin.Context) {
 	if !emailCheck.MatchString(user) {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"msg":     "很抱歉，您的邮箱无法注册" + viper.GetString("name"),
+			"msg":     "很抱歉，您的账户无法注册" + viper.GetString("name"),
 		})
 		return
 	}

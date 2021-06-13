@@ -103,7 +103,8 @@ func authMiddleware() gin.HandlerFunc {
 				return
 			}
 			if !viper.GetBool("allow_unregistered_access") && !utils.IsInAllowedSubnet(c.ClientIP()) {
-				utils.HttpReturnWithCodeOneAndAbort(c, "登录凭据过期，请使用邮箱重新登录。")
+				log.Println("判定为不符合子网要求和允许非注册用户浏览")
+				utils.HttpReturnWithCodeOneAndAbort(c, "登录凭据过期，请重新登录。")
 				return
 			} else {
 				c.Set("user", structs.User{ID: -1, Role: structs.UnregisteredRole, EmailHash: ""})
@@ -127,7 +128,8 @@ func disallowUnregisteredUsers() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		user := c.MustGet("user").(structs.User)
 		if user.Role == structs.UnregisteredRole {
-			utils.HttpReturnWithCodeOneAndAbort(c, "登录凭据过期，请使用邮箱重新登录。")
+			log.Println("用户身份为未注册")
+			utils.HttpReturnWithCodeOneAndAbort(c, "登录凭据过期，请重新登录。")
 			return
 		}
 		c.Next()
