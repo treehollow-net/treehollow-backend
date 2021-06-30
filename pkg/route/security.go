@@ -1,13 +1,6 @@
 package route
 
 import (
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
-	"github.com/ulule/limiter/v3"
-	"gopkg.in/ezzarghili/recaptcha-go.v4"
-	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
 	"log"
 	"net"
 	"net/http"
@@ -17,6 +10,14 @@ import (
 	"treehollow-backend/pkg/mail"
 	"treehollow-backend/pkg/structs"
 	"treehollow-backend/pkg/utils"
+
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
+	"github.com/ulule/limiter/v3"
+	"gopkg.in/ezzarghili/recaptcha-go.v4"
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
 func sendCode(c *gin.Context) {
@@ -121,7 +122,7 @@ func sendCode(c *gin.Context) {
 		return
 	}
 
-	err = mail.SendMessageCode(code, user)
+	err = mail.SendMail(code, user)
 	if err != nil {
 		log.Printf("send mail to %s failed: %s\n", user, err)
 		c.JSON(http.StatusOK, gin.H{

@@ -103,7 +103,7 @@ func authMiddleware() gin.HandlerFunc {
 				return
 			}
 			if !viper.GetBool("allow_unregistered_access") && !utils.IsInAllowedSubnet(c.ClientIP()) {
-				log.Println("判定为不符合子网要求和允许非注册用户浏览")
+				log.Println("判定为不符合子网要求和不允许非注册用户浏览")
 				utils.HttpReturnWithCodeOneAndAbort(c, "登录凭据过期，请重新登录。")
 				return
 			} else {
